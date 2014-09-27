@@ -181,9 +181,7 @@ body {
 				margin-right: 2px;
 			}
 
-	.tweet:hover .tweet-actions{
-		display: block;
-	}
+	
 
 
 
@@ -270,5 +268,7 @@ body {
 				top: 0;
 				left: 0;
 			}
-
+.tweet:hover .tweet-actions{
+		display: block;
+	}
 
