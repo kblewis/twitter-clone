@@ -1,11 +1,13 @@
 $(document).ready(function(){
 		$('#char-count').css('display','none');
 		$('button').css('display','none');
+
 		$('.tweet-compose').click(function(){
 		$('button').show();
 		$('#char-count').show();
 		$('.tweet-compose').css('height','66px');
 		});
+
 		$('.tweet-compose').keydown(function(){
 			var charLimit = 140;
 			var charTyped = $(this).val();
@@ -22,5 +24,19 @@ $(document).ready(function(){
 				$('button').prop("disabled", false);
 				$('#char-count').css('color', 'black');	
 			}		
+		});
+
+		$('#tweet-submit').on('click', function(e){
+			var el = $('.tweet:first').clone();
+			el.find('.avatar').prop('src', 'img/vklimenko.jpg');
+			el.find('.fullname').html('Kelsey Lewis');
+			el.find('.username').html('klewis');
+			el.find('.tweet-text').html($('.tweet-compose').val());
+			$('#stream').prepend(el);
+		});
+
+		$('.tweet').on('click', function(e){
+			$(this).find('.stats').show();
+			$(this).find('.reply').show();
 		});
 });
